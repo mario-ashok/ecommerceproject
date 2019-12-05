@@ -47,7 +47,10 @@
         <a class="nav-link" href="#">Features</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" id="cart">Pricing</a>
+        <button id="cart" data-html="true" type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
+sagittis lacus vel augue laoreet rutrum faucibus.">
+  Cart(0)
+</button>
       </li>
        
     </ul>
@@ -174,6 +177,13 @@ item.addEventListener('click',function(){
 	localStorage.setItem('cart',JSON.stringify(cart));
 	document.getElementById('cart').innerHTML="Cart("+Object.keys(cart).length+")";
 	 
+});
+
+$(function () {
+  $('[data-toggle="popover"]').popover();
+
+  document.getElementById("cart").setAttribute('data-content','<h2>This is your cart</h2>');
+
 });
 
  </script>
